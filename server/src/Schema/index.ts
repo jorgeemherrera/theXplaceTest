@@ -3,8 +3,8 @@ import { GraphQLSchema, GraphQLObjectType } from 'graphql';
 import { CREATE_APPLICANT, UPDATE_SKILLS } from './Mutations/Applicant';
 import { GET_ALL_APPLICANTS } from './Queries/Applicant';
 
-import { CREATE_COMPANY } from './Mutations/Company';
-import { CREATE_OFFER } from './Mutations/JobOffer';
+import { CREATE_COMPANY, UPDATE_DESCRIPTION_COMPANY, UPDATE_NAME_COMPANY } from './Mutations/Company';
+import { CREATE_OFFER, UPDATE_DISCIPLINES_OFFER, UPDATE_JOB_DESCRIPTION_OFFER, UPDATE_JOB_TYPE_OFFER, UPDATE_NAME_OFFER, UPDATE_RATE_PER_HOUR_OFFER, UPDATE_START_DATE_OFFER, UPDATE_STATE_ACTIVE_OFFER, UPDATE_TOOLS_OFFER } from './Mutations/JobOffer';
 import { GET_ALL_COMPANIES } from './Queries/Company';
 import { GET_ALL_OFFERS } from './Queries/JobOffer';
 import { CREATE_APPLICATION_JOB } from './Mutations/ApplyJob';
@@ -26,6 +26,16 @@ const Mutation = new GraphQLObjectType({
         createCompany: CREATE_COMPANY,
         createOffer: CREATE_OFFER,
         updateSkills: UPDATE_SKILLS,
+        updateNameCompany: UPDATE_NAME_COMPANY,
+        updateDescriptionCompany: UPDATE_DESCRIPTION_COMPANY,
+        updateNameOffer: UPDATE_NAME_OFFER,
+        updateStartDateOffer: UPDATE_START_DATE_OFFER,
+        updateStateActiveOffer: UPDATE_STATE_ACTIVE_OFFER,
+        updateRatePerHourOffer: UPDATE_RATE_PER_HOUR_OFFER,
+        updateToolsOffer: UPDATE_TOOLS_OFFER,
+        updateDisciplines: UPDATE_DISCIPLINES_OFFER,
+        updateJobDescriptionOffer: UPDATE_JOB_DESCRIPTION_OFFER,
+        updateJobTypeOffer: UPDATE_JOB_TYPE_OFFER,
         createApplyOffer: CREATE_APPLICATION_JOB
     }
 })

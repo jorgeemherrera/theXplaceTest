@@ -10,8 +10,9 @@ export const JobOfferType = new GraphQLObjectType({
         stateActive: { type: GraphQLBoolean },
         ratePerHour: { type: GraphQLInt },
         tools: { type: GraphQLString },
-        disciplines: { type: GraphQLString},
+        disciplines: { type: GraphQLString },
         jobDescription: { type: GraphQLString },
         jobType: { type: GraphQLString },
+        company: { type: GraphQLID }
     })
 })

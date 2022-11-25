@@ -1,5 +1,5 @@
-import { BaseEntity, Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm"
-import { JobOffer } from './JobOffer';
+import { BaseEntity, Entity, Column, PrimaryGeneratedColumn,  OneToMany } from "typeorm"
+import { JobOffer } from "./JobOffer";
 
 
 @Entity()
