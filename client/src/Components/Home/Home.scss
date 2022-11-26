@@ -1,0 +1,56 @@
+@import '../../assets/scss/variables';
+.parent-home {
+  display: grid;
+  height: 100%;
+  background: #ffff;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 1px 20px 10px #4e2789;
+  padding: 20px;
+  padding: 20px;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  border: none;
+  h1 {
+    color: $black;
+    font-weight: 900;
+  }
+  button {
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    background: $color_green;
+    color: $black;
+    border: none;
+    height: 41px;
+    border-radius: 15px;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 100%;
+  }
+  .create-applicant-from-home {
+    display: grid;
+    justify-items: stretch;
+  }
+  .create-company-from-home {
+    display: grid;
+    justify-items: stretch;
+  }
+}
+.recruiter{
+    max-height: 364px;
+    max-width: 341px;
+}
+.talent{
+    max-height: 682px;
+    max-width: 332px;
+}
+.home{
+    max-height: 320px;
+    max-width: 341px;
+    .button-home{
+        width: 100%;
+        max-width: 204px;
+    }
+}

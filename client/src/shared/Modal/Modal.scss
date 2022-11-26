@@ -1,0 +1,47 @@
+@import '../../assets/scss/variables';
+
+.overlay {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+.modal-container {
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    min-height: 100px;
+    padding: 20px;
+    position: relative;
+    width: 80vw;
+    #icon-play-x {
+        color: $color_purple;
+        height: 20px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 20px;
+        &:hover {
+            color: $color_purple;
+        }
+    }
+}
+.modal-header {
+    align-items: center;
+    border-bottom: 1px solid $color-purple-light;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    h3 {
+        color: $color_purple;
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 0;
+    }
+}

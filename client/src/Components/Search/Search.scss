@@ -1,0 +1,125 @@
+@import "../../assets/scss/variables";
+
+h1 {
+    font-size: 2rem;
+}
+
+
+.search-bar {
+    align-items: center;
+    background-color: $color_green;
+    border-radius: 6rem;
+    box-shadow: 0px 1px 20px 10px #4e2789;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto;
+    padding: 0.5rem 2rem;
+    width: 90vw;
+    input {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: "Nunito", sans-serif;
+        padding: 0 1rem;
+        font-size: 1rem;
+        &.search-offer {
+            border-radius: 2rem;
+            border: none;
+            box-shadow: 0px 0px 19px #00b22c;
+            display: flex;
+            height: 2.6rem;
+            margin: 1rem 0;
+            width: 75vw;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    p {
+        color: $color-purple-dark;
+        font-size: 1.5rem;
+    }
+}
+.job-offer {
+    background-color: $color-purple-dark;
+    border-radius: 0.5rem;
+    color: $white;
+    height: auto;
+    justify-content: space-between;
+    margin: 0 0 1rem 0;
+    padding: 2rem;
+    width: 90vw;
+    &__header {
+        align-content: center;
+        align-items: center;
+        border-bottom: 1px solid $color-purple;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+    &__description {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.date {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 9%;
+    svg {
+        margin-right: 0.5rem;
+    }
+    span {
+        font-weight: 100;
+    }
+    font-weight: 800;
+}
+
+.rate-hour {
+    align-items: center;
+    display: flex;
+}
+
+.rate-hour,
+.skills,
+.disciplines {
+    span {
+        font-weight: 100;
+    }
+    font-weight: 800;
+}
+
+.pill-offer-type,
+.pill-offer {
+    svg {
+        height: 22px !important;
+        margin-right: 0.5rem;
+        width: 22px !important;
+    }
+}
+
+.pill-offer-type,
+.pill-offer {
+    align-items: center;
+    border-radius: 1rem;
+    color: $color-purple-dark;
+    display: flex;
+    font-size: 0.9rem;
+    font-weight: 900;
+    padding: 0.3rem 0.5rem;
+    text-transform: uppercase;
+}
+
+.pill-offer-type {
+    background: $fuchsia;
+}
+
+.pill-offer {
+    background: $color_green;
+}

@@ -1,0 +1,16 @@
+@import "./assets/scss/variables";
+
+body{
+  margin: 0;
+}
+.parent-app {
+  font-family: 'Nunito', sans-serif;
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+//   background: rgb(0,0,0);
+//   background: linear-gradient(207deg, rgba(0,0,0,1) 14%, rgba(67,9,121,1) 50%, rgba(0,0,0,1) 90%);
+background-color: $color_purple;
+}

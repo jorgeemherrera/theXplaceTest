@@ -66,7 +66,7 @@ export default function CreateJobOffer() {
             value={stateForm.disciplines}
             onChange={handleChangeInput} />
           <input
-            type='text'
+            type='textarea'
             placeholder='Job Description'
             name="jobDescription"
             value={stateForm.jobDescription}

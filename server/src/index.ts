@@ -17,7 +17,7 @@ const main = async () => {
         username: "root",
         password: "root",
         logging: true,
-        synchronize: true, // to create tables in MySQL
+        synchronize: false, // to create tables in MySQL
         entities: [JobOffer, Applicant, Company, ApplyJob]
     });
     dataSource.initialize()
