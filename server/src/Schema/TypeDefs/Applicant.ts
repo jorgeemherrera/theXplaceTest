@@ -8,10 +8,11 @@ export const ApplicantType = new GraphQLObjectType({
         nameApplicant: { type: GraphQLString },
         lastName: { type: GraphQLString },
         skills: { type: GraphQLString },
+        email: { type: GraphQLString },
         education: { type: GraphQLString },
         jobType: { type: GraphQLString },
-        phone: { type: GraphQLInt },
-        rateExpected: { type: GraphQLInt },
+        phone: { type: GraphQLString },
+        rateExpected: { type: GraphQLString },
         location: { type: GraphQLString }
     })
 });

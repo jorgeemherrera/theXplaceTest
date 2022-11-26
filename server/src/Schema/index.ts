@@ -1,6 +1,6 @@
 // Export our Schema
 import { GraphQLSchema, GraphQLObjectType } from 'graphql';
-import { CREATE_APPLICANT, UPDATE_SKILLS } from './Mutations/Applicant';
+import { CREATE_APPLICANT, UPDATE_SKILLS, UPDATE_EDUCATION, UPDATE_JOBTYPE, UPDATE_PHONE, UPDATE_RATE_EXPECTED, UPDATE_LOCATION, UPDATE_EMAIL } from './Mutations/Applicant';
 import { GET_ALL_APPLICANTS } from './Queries/Applicant';
 
 import { CREATE_COMPANY, UPDATE_DESCRIPTION_COMPANY, UPDATE_NAME_COMPANY } from './Mutations/Company';
@@ -16,7 +16,8 @@ const RootQuery = new GraphQLObjectType({
         getAllUsers: GET_ALL_APPLICANTS,
         getAllCompanies: GET_ALL_COMPANIES,
         getAllOffer: GET_ALL_OFFERS,
-        getAllApplicationJob: GET_ALL_APPLICATION_JOB
+        getAllApplicationJob: GET_ALL_APPLICATION_JOB,
+        getAllAplicants: GET_ALL_APPLICANTS,
     }
 });
 const Mutation = new GraphQLObjectType({
@@ -26,6 +27,12 @@ const Mutation = new GraphQLObjectType({
         createCompany: CREATE_COMPANY,
         createOffer: CREATE_OFFER,
         updateSkills: UPDATE_SKILLS,
+        updateJobType: UPDATE_JOBTYPE,
+        updatePhone: UPDATE_PHONE,
+        updateEmail: UPDATE_EMAIL,
+        updateRateExpected: UPDATE_RATE_EXPECTED,
+        updateEducation: UPDATE_EDUCATION,
+        updateLocation: UPDATE_LOCATION,
         updateNameCompany: UPDATE_NAME_COMPANY,
         updateDescriptionCompany: UPDATE_DESCRIPTION_COMPANY,
         updateNameOffer: UPDATE_NAME_OFFER,
@@ -36,7 +43,7 @@ const Mutation = new GraphQLObjectType({
         updateDisciplines: UPDATE_DISCIPLINES_OFFER,
         updateJobDescriptionOffer: UPDATE_JOB_DESCRIPTION_OFFER,
         updateJobTypeOffer: UPDATE_JOB_TYPE_OFFER,
-        createApplyOffer: CREATE_APPLICATION_JOB
+        createApplyOffer: CREATE_APPLICATION_JOB,
     }
 })
 

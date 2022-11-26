@@ -8,7 +8,7 @@ export const JobOfferType = new GraphQLObjectType({
         offerStartDate: { type: GraphQLString },
         offerEndDate: { type: GraphQLString },
         stateActive: { type: GraphQLBoolean },
-        ratePerHour: { type: GraphQLInt },
+        ratePerHour: { type: GraphQLString },
         tools: { type: GraphQLString },
         disciplines: { type: GraphQLString },
         jobDescription: { type: GraphQLString },

@@ -22,7 +22,7 @@ export class JobOffer extends BaseEntity {
     stateActive!: boolean;
 
     @Column()
-    ratePerHour!: number;
+    ratePerHour!: String;
 
     @Column()
     tools!: String;

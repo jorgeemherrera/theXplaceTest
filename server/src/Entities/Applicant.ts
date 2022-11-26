@@ -14,6 +14,9 @@ export class Applicant extends BaseEntity {
     lastName!: String;
 
     @Column()
+    email!: String;
+
+    @Column()
     skills!: String;
 
     @Column()
@@ -23,10 +26,10 @@ export class Applicant extends BaseEntity {
     jobType!: String;
 
     @Column()
-    phone!: Number;
+    phone!: String;
 
     @Column()
-    rateExpected!: Number;
+    rateExpected!: String;
 
     @Column()
     location!: String;

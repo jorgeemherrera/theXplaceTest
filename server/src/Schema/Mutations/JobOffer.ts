@@ -1,4 +1,4 @@
-import { GraphQLBoolean, GraphQLID, GraphQLInt, GraphQLString } from "graphql";
+import { GraphQLBoolean, GraphQLID, GraphQLInt, GraphQLString, graphqlSync } from "graphql";
 import { JobOffer } from "../../Entities/JobOffer";
 import { JobOfferType } from "../TypeDefs/JobOffer";
 import { MessageType } from "../TypeDefs/Message";
@@ -10,7 +10,7 @@ export const CREATE_OFFER = {
         offerStartDate: { type: GraphQLString },
         offerEndDate: { type: GraphQLString },
         stateActive: { type: GraphQLBoolean },
-        ratePerHour: { type: GraphQLInt },
+        ratePerHour: { type: GraphQLString },
         tools: { type: GraphQLString },
         disciplines: { type: GraphQLString },
         jobDescription: { type: GraphQLString },
