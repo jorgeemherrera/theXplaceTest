@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useMutation } from '@apollo/client';
 import { CREATE_OFFER } from '../../Graphql/Mutations/CreateJobOffer';
+import './CreateJobOffer.scss'
+import Button from '../../shared/Button';
 
 export default function CreateJobOffer() {
   const [stateForm, setStateForm] = useState({
@@ -26,7 +28,7 @@ export default function CreateJobOffer() {
     });
   }
   return (
-    <section>
+    <section className='parent-job-offer'>
       {error ? <p>{error.message}</p> :
         <form>
           <input
@@ -80,13 +82,14 @@ export default function CreateJobOffer() {
           <label>
             State Active
             <input
+              className='checkbox-state'
               type="checkbox"
               name="stateActive"
               checked={stateActive}
               onChange={(e) => setStateActive(Boolean(e.target.value))}
             />
           </label>
-          <button onClick={() => createOffer({
+          <Button onClick={() => createOffer({
             variables: {
               nameOffer: stateForm.nameOffer,
               offerStartDate: stateForm.offerStartDate,
@@ -98,7 +101,7 @@ export default function CreateJobOffer() {
               jobDescription: stateForm.jobDescription,
               jobType: stateForm.jobType
             }
-          })}>Create Offer</button>
+          })}>Create Offer</Button>
         </form>
       }
     </section>

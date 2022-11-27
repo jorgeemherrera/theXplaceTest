@@ -4,12 +4,14 @@ import './Button.scss';
 type Props = {
     children: any,
     disabled?: boolean,
-    onClick: any
+    onClick: any,
+    className?: any
 };
 
-export default function Button({children, disabled, onClick}: Props) {
+export default function Button({children, disabled, onClick, className} : Props ){
+  const myClass = `btn ${className}`;
   return (
-    <button className='btn' onClick={
+    <button className={myClass || 'btn'} onClick={
         !disabled ? onClick : () => { }
     }>{children}</button>
   )

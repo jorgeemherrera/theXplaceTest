@@ -10,6 +10,9 @@ body{
   display: grid;
   justify-items: center;
   align-items: center;
+  a{
+    text-decoration: none;
+  }
 //   background: rgb(0,0,0);
 //   background: linear-gradient(207deg, rgba(0,0,0,1) 14%, rgba(67,9,121,1) 50%, rgba(0,0,0,1) 90%);
 background-color: $color_purple;

@@ -30,10 +30,10 @@ export default function Search() {
 
     return (
         <>
-            <div className="search-bar">
-                <p>Search Offer...</p>
-                <input type="text" value={search} onChange={handleChange} className="search-offer" />
-            </div>
+                <div className="search-bar">
+                    <p>Search Offer...</p>
+                    <input type="text" value={search} onChange={handleChange} className="search-offer" />
+                </div> :
             {
                 data?.getAllOffer.map((offer: any, idx: number) => {
                     return search === "" || data?.getAllOffer[idx].nameOffer.toLowerCase().includes(search.toLowerCase()) ?

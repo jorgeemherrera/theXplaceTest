@@ -16,3 +16,63 @@
     padding: 0 0.5rem;
   }
 }
+button {
+  &.button-applicant {
+    margin: 1rem auto;
+    width: 30vw;
+    display: block;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-pill {
+  display: flex;
+}
+
+.container-pills-education,
+.container-pills-skills {
+  display: flex;
+  width: 320px;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  position: relative;
+  span {
+    &.hide {
+      display: none;
+    }
+  }
+}
+.container-pills-education {
+  margin: 0 5rem;
+}
+.container-pills-skills {
+  right: -70%;
+}
+
+.pill-skill {
+  align-items: center;
+  background: $color-purple-light;
+  border-radius: 2rem;
+  display: flex;
+  font-size: 0.9rem;
+  height: 2rem;
+  justify-content: space-around;
+  margin: 0.2rem;
+  padding: 0 1rem;
+  width: fit-content;
+  #icon-x {
+    padding-left: 0.5rem;
+    color: $color_purple;
+    height: 15px;
+    position: relative;
+    width: 15px;
+    &:hover {
+      color: $color_purple;
+    }
+  }
+}

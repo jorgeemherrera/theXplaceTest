@@ -1,21 +1,15 @@
 import { useMutation } from "@apollo/client";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { CREATE_COMPANY } from "../../Graphql/Mutations/CreateCompany";
+import Button from "../../shared/Button";
 import './CreateCompany.scss'
 
 const CreateCompany = () => {
     const [nameCompany, setNameCompany] = useState("")
     const [descriptionCompany, setDescriptionCompany] = useState("")
-    const [validationEmptyInputs, setValidationEmptyInputs] = useState(false)
     const [createCompany, { error }] = useMutation(CREATE_COMPANY);
 
-    useEffect(() => {
-        if (nameCompany === "" || descriptionCompany === "") {
-            setValidationEmptyInputs(true)
-        }
-    }, [nameCompany, descriptionCompany])
-    
-
+    console.log(error)
     return (
         <>
             <form className="form-create-company">
@@ -25,20 +19,19 @@ const CreateCompany = () => {
                     onChange={(e) => {
                         setNameCompany(e.target.value)
                     }} />
-                <input
-                    type="text"
+                <textarea
                     placeholder="Company Description"
                     onChange={(e) => {
                         setDescriptionCompany(e.target.value)
                     }} />
-                <button onClick={() => {
+                <Button onClick={() => {
                     createCompany({
                         variables: {
                             nameCompany: nameCompany,
                             description: descriptionCompany
                         }
                     })
-                }}>Create company</button>
+                }}>Create company</Button>
             </form>
         </>
     );

@@ -17,3 +17,4 @@ export class Company extends BaseEntity{
     @OneToMany(() => JobOffer, (jobOffer) => jobOffer.idOffer)
     idsOffers!: JobOffer[]
 }
+

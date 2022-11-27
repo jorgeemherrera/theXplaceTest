@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, OneToMany} from "typeorm";
 import { ApplyJob } from './ApplyJob';
 
 @Entity()
@@ -37,3 +37,5 @@ export class Applicant extends BaseEntity {
     @OneToMany(() => ApplyJob, (applyJob) => applyJob.idApplicant)
     applyJob!: ApplyJob[]
 }
+
+
