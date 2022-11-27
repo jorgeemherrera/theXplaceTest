@@ -1,15 +1,15 @@
-.parent-recruiter{
+.parent-recruiter {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     max-width: 344px;
     width: 100%;
-    button{
-        min-width: 326px;
-        display: flex;
+    button {
         align-items: center;
-        justify-content: space-between;
+        display: flex;
+        justify-content: center;
+        min-width: 326px;
         padding: 0 19px;
     }
 }

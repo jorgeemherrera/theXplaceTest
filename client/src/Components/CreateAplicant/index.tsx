@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useMutation } from "@apollo/client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './CreateAplicant.scss'
 import { CREATE_APPLICANT } from "../../Graphql/Mutations/CreateAplicant";
 import Button from "../../shared/Button";
@@ -16,6 +16,7 @@ const CreateAplicant = () => {
         rateExpected: "",
         location: "",
     });
+
     const [skillValue, setSkillValue] = useState('');
     const [educationValue, setEducationValue] = useState('');
     const [skillsInputValues, setSkillsInputValues] = useState(['']);
@@ -42,7 +43,6 @@ const CreateAplicant = () => {
             setSkillsInputValues(current => [...current, skillValue]);
             setSkillValue('')
         }
-        console.log('skillsInputValues', skillsInputValues)
         setSkillsInputStrings(skillsInputValues.toString());
     }
 
@@ -55,7 +55,6 @@ const CreateAplicant = () => {
             setEducationInputValues(current => [...current, educationValue]);
             setEducationValue('')
         }
-        console.log('educationInputValues', educationInputValues)
         setEducationInputStrings(educationInputValues.toString());
     }
 
@@ -67,43 +66,40 @@ const CreateAplicant = () => {
         setEducationInputValues(errors => errors.filter((item, index) => key !== index));
     }
 
-    const pills = () => {
-        <div className="container-pill">
-            <div className="container-pills-skills">
-                {
-                    skillsInputValues.map((skill, idx) => {
-                        return (
-                            <span className={skill === '' ? 'hide' : 'pill-skill'}>
-                                {skill}
-                                <IconX id="icon-x" onClick={() => deleteSkillsElement(idx)} />
-                            </span>
-                        )
-                    })
-                }
-            </div>
-
-            <div className="container-pills-education">
-                {
-                    educationInputValues.map((skill, idx) => {
-                        return (
-                            <span className={skill === '' ? 'hide' : 'pill-skill'}>
-                                {skill}
-                                <IconX id="icon-x" onClick={() => deleteEducationElement(idx)} />
-                            </span>
-                        )
-                    })
-                }
-            </div>
-        </div>
-    }
-
     return (
         <>
             {error ? <p>{error.message}</p> :
                 <>
-                    {console.log('skillsInputValues', skillsInputValues)}
                     <div className="container">
-                        {pills()}
+
+                        <div className="container-pill">
+                            <div className="container-pills-skills">
+                                {
+                                    skillsInputValues.map((skill, idx) => {
+                                        return (
+                                            <span className={skill === '' ? 'hide' : 'pill-skill'}>
+                                                {skill}
+                                                <IconX id="icon-x" onClick={() => deleteSkillsElement(idx)} />
+                                            </span>
+                                        )
+                                    })
+                                }
+                            </div>
+
+                            <div className="container-pills-education">
+                                {
+                                    educationInputValues.map((skill, idx) => {
+                                        return (
+                                            <span className={skill === '' ? 'hide' : 'pill-skill'}>
+                                                {skill}
+                                                <IconX id="icon-x" onClick={() => deleteEducationElement(idx)} />
+                                            </span>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+
                         <form className="form-create-aplicant">
                             <input
                                 placeholder="Name"
@@ -118,7 +114,6 @@ const CreateAplicant = () => {
                                 value={stateForm.lastname}
                                 onChange={handleChangeInput}
                             />
-
                             <input
                                 type="text"
                                 placeholder="Add Skills"
@@ -137,12 +132,12 @@ const CreateAplicant = () => {
                                 onKeyDown={handleEducationKeyDown}
                                 onChange={handleEducationOnChange}
                             />
-                            <input placeholder="Job type"
-                                type="text"
-                                name="jobType"
-                                value={stateForm.jobType}
-                                onChange={handleChangeInput}
-                            />
+                            <select name="jobType" onChange={handleChangeInput} value={stateForm.jobType}>
+                                <option value="" disabled>Select a Type of Job</option>
+                                <option value="Remote">Remote</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="On site">On Site</option>
+                            </select>
                             <input placeholder="Phone"
                                 type="text"
                                 name="phone"
@@ -165,7 +160,7 @@ const CreateAplicant = () => {
                     </div>
                     <Button
                         className='button-applicant'
-                        onClick={() => {
+                        onClick={() =>
                             CreateAplicant({
                                 variables: {
                                     nameApplicant: stateForm.nameApplicant,
@@ -178,8 +173,7 @@ const CreateAplicant = () => {
                                     rateExpected: stateForm.rateExpected,
                                     location: stateForm.location,
                                 }
-                            })
-                        }}>
+                            })}>
                         Create Applicant
                     </Button>
                 </>

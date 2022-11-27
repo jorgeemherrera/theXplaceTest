@@ -40,26 +40,26 @@ const Recruiter = () => {
                         <Button onClick={selectCreateOffer}>Do you want to create an offer?</Button>
                         <Button onClick={selectViewCompanies}>Do you want to see all the companies?</Button>
                         <Link to='/'>
-                            <Button onClick="">ComeBack  <IconArrowBackUp width='18' height='18' /></Button>
+                            <Button onClick="">Go Back  <IconArrowBackUp width='18' height='18' /></Button>
                         </Link>
                     </>
                     : createCompany && !createJobOffer && !viewCompanies ?
                         <>
                             <h1>Create company</h1>
                             <CreateCompany />
-                            <Button onClick={selectCreateCompany}>ComeBack  <IconArrowBackUp width='18' height='18' /></Button>
+                            <Button onClick={selectCreateCompany}>Go Back  <IconArrowBackUp width='18' height='18' /></Button>
                         </>
                         : !createCompany && createJobOffer && !viewCompanies ?
                             <>
                                 <h1>Create job offer</h1>
                                 <CreateJobOffer />
-                                <Button onClick={selectCreateOffer}>ComeBack  <IconArrowBackUp width='18' height='18' /></Button>
+                                <Button onClick={selectCreateOffer}>Go Back  <IconArrowBackUp width='18' height='18' /></Button>
                             </>
                             :
                             <>
                                 <h1>List of companies</h1>
                                 <ListOfCompanies />
-                                <Button onClick={selectViewCompanies}>ComeBack  <IconArrowBackUp width='18' height='18' /></Button>
+                                <Button onClick={selectViewCompanies}>Go Back  <IconArrowBackUp width='18' height='18' /></Button>
                             </>
                 }
             </div>

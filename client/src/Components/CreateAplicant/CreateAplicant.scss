@@ -3,14 +3,14 @@
 .form-create-aplicant {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  input {
+  input, select {
     background: $white;
     border-radius: 5px;
     border: none;
     box-shadow: 0px 1px 12px 0px #e2d6f4;
     font-family: "Nunito", sans-serif;
     font-weight: bold;
-    height: 2rem;
+    height: 2.5rem;
     margin: 1rem 1rem;
     min-width: 300px;
     padding: 0 0.5rem;
@@ -18,9 +18,9 @@
 }
 button {
   &.button-applicant {
+    display: block;
     margin: 1rem auto;
     width: 30vw;
-    display: block;
   }
 }
 
@@ -36,11 +36,11 @@ button {
 .container-pills-education,
 .container-pills-skills {
   display: flex;
-  width: 320px;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: relative;
+  width: 320px;
   span {
     &.hide {
       display: none;
@@ -66,9 +66,9 @@ button {
   padding: 0 1rem;
   width: fit-content;
   #icon-x {
-    padding-left: 0.5rem;
     color: $color_purple;
     height: 15px;
+    padding-left: 0.5rem;
     position: relative;
     width: 15px;
     &:hover {

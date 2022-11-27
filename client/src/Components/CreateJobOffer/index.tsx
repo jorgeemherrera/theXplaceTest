@@ -27,6 +27,10 @@ export default function CreateJobOffer() {
       [event.target.name]: value
     });
   }
+
+  const handleChangeCheckbox = () => {
+    setStateActive(!stateActive)
+  }
   return (
     <section className='parent-job-offer'>
       {error ? <p>{error.message}</p> :
@@ -73,12 +77,12 @@ export default function CreateJobOffer() {
             name="jobDescription"
             value={stateForm.jobDescription}
             onChange={handleChangeInput} />
-          <input
-            type='text'
-            placeholder='Job Type'
-            name="jobType"
-            value={stateForm.jobType}
-            onChange={handleChangeInput} />
+          <select name="jobType" onChange={handleChangeInput} value={stateForm.jobType}>
+            <option value="" disabled>Select a Type of Job</option>
+            <option value="Remote">Remote</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="On site">On Site</option>
+          </select>
           <label>
             State Active
             <input
@@ -86,7 +90,7 @@ export default function CreateJobOffer() {
               type="checkbox"
               name="stateActive"
               checked={stateActive}
-              onChange={(e) => setStateActive(Boolean(e.target.value))}
+              onChange={handleChangeCheckbox}
             />
           </label>
           <Button onClick={() => createOffer({
