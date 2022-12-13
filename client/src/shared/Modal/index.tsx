@@ -17,7 +17,7 @@ const Modal = ({ children, title, stateModal, changeModalState }: Props) => {
                     <section className='overlay'>
                         <div className='modal-container'>
                             <div className='modal-header'>
-                                <h3>{title}</h3>
+                                <h3>Aplicar a la oferta <strong>{title}</strong></h3>
                             </div>
                             <IconPlaystationX id='icon-play-x' onClick={() => changeModalState(false)} />
                             {children}

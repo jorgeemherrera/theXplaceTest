@@ -1,6 +1,9 @@
 @import '../../assets/scss/variables';
-
 .btn {
+    &.action{
+        background-color: rgb(219, 216, 216) !important;
+        cursor: not-allowed !important;
+    }
     align-items: center;
     background: $color_green;
     border-radius: 2rem;
@@ -11,8 +14,8 @@
     font-family: "Nunito", sans-serif;
     font-size: 1rem;
     font-weight: bold;
-    height: 41px;
-    margin: 20px 0;
+    height: 2.563rem;
+    margin: 1.25rem 0;
     padding: 0 1rem;
     svg {
         padding-left: 0.5rem;

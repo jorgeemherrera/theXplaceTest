@@ -40,7 +40,7 @@ const Recruiter = () => {
                         <Button onClick={selectCreateOffer}>Do you want to create an offer?</Button>
                         <Button onClick={selectViewCompanies}>Do you want to see all the companies?</Button>
                         <Link to='/'>
-                            <Button onClick="">Go Back  <IconArrowBackUp width='18' height='18' /></Button>
+                            <Button>Go Back  <IconArrowBackUp width='18' height='18' /></Button>
                         </Link>
                     </>
                     : createCompany && !createJobOffer && !viewCompanies ?

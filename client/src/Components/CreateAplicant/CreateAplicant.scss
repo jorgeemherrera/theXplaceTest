@@ -5,14 +5,14 @@
   grid-template-columns: 1fr 1fr 1fr;
   input, select {
     background: $white;
-    border-radius: 5px;
+    border-radius: 0.313rem;
     border: none;
-    box-shadow: 0px 1px 12px 0px #e2d6f4;
+    box-shadow: 0 0.063rem 0.75rem 0 #e2d6f4;
     font-family: "Nunito", sans-serif;
     font-weight: bold;
     height: 2.5rem;
     margin: 1rem 1rem;
-    min-width: 300px;
+    min-width: 18.75rem;
     padding: 0 0.5rem;
   }
 }
@@ -40,7 +40,7 @@ button {
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: relative;
-  width: 320px;
+  width: 20rem;
   span {
     &.hide {
       display: none;
@@ -67,10 +67,10 @@ button {
   width: fit-content;
   #icon-x {
     color: $color_purple;
-    height: 15px;
+    height: 0.938rem;
     padding-left: 0.5rem;
     position: relative;
-    width: 15px;
+    width: 0.938rem;
     &:hover {
       color: $color_purple;
     }

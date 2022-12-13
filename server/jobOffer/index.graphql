@@ -16,6 +16,11 @@ type JobOfferList {
 }
 
 type Query {
+  getJobOfferById(id: ID): JobOfferEntry
+    @rest(
+      endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/job_offer/$id.json"
+    )
+
   getJobOffers: [JobOfferList]
     @rest(
       endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/job_offer.json"
@@ -25,7 +30,17 @@ type Query {
 
 
 type Mutation {
-  insertOffer(disciplines: String!, jobDescription: String!, jobType: String!, nameOffer: String!, offerEndDate: String!, offerStartDate: String!, ratePerHour: String!, stateActive: String, tools: String!): JobOfferEntry
+  insertOffer(
+      disciplines: String!,
+      jobDescription: String!,
+      jobType: String!,
+      nameOffer: String!,
+      offerEndDate: String!,
+      offerStartDate: String!,
+      ratePerHour: String!,
+      stateActive: String,
+      tools: String!
+    ): JobOfferEntry
     @rest(
       endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/job_offer.json"
       method: POST

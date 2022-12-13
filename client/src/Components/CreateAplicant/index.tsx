@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useMutation } from "@apollo/client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './CreateAplicant.scss'
 import { CREATE_APPLICANT } from "../../Graphql/Mutations/CreateAplicant";
 import Button from "../../shared/Button";
 import { IconX } from '@tabler/icons';
 
-const CreateAplicant = () => {
+const CreateAplicant = (jobOffer: any) => {
     const [stateForm, setStateForm] = useState({
         name: "",
         lastname: "",
@@ -23,8 +23,16 @@ const CreateAplicant = () => {
     const [educationInputValues, setEducationInputValues] = useState(['']);
     const [skillsInputStrings, setSkillsInputStrings] = useState('');
     const [educationInputStrings, setEducationInputStrings] = useState('');
+/*     const [jobOfferId, setJobOfferId] = useState([]);
 
-    const [CreateAplicant, { error }] = useMutation(CREATE_APPLICANT);
+    useEffect(() => {
+        setJobOfferId(jobOffer);
+        console.log('jobOfferId---->', jobOfferId)
+    }, [jobOffer]); */
+
+    console.log('como llega joboffer', jobOffer)
+
+    const [createApplicant, { error }] = useMutation(CREATE_APPLICANT);
 
     const handleChangeInput = (event: any) => {
         const value = event.target.value;
@@ -71,13 +79,12 @@ const CreateAplicant = () => {
             {error ? <p>{error.message}</p> :
                 <>
                     <div className="container">
-
                         <div className="container-pill">
                             <div className="container-pills-skills">
                                 {
                                     skillsInputValues.map((skill, idx) => {
                                         return (
-                                            <span className={skill === '' ? 'hide' : 'pill-skill'}>
+                                            <span className={skill === '' ? 'hide' : 'pill-skill'} key={idx}>
                                                 {skill}
                                                 <IconX id="icon-x" onClick={() => deleteSkillsElement(idx)} />
                                             </span>
@@ -85,12 +92,11 @@ const CreateAplicant = () => {
                                     })
                                 }
                             </div>
-
                             <div className="container-pills-education">
                                 {
                                     educationInputValues.map((skill, idx) => {
                                         return (
-                                            <span className={skill === '' ? 'hide' : 'pill-skill'}>
+                                            <span className={skill === '' ? 'hide' : 'pill-skill'} key={idx}>
                                                 {skill}
                                                 <IconX id="icon-x" onClick={() => deleteEducationElement(idx)} />
                                             </span>
@@ -161,7 +167,7 @@ const CreateAplicant = () => {
                     <Button
                         className='button-applicant'
                         onClick={() =>
-                            CreateAplicant({
+                            createApplicant({
                                 variables: {
                                     name: stateForm.name,
                                     lastName: stateForm.lastname,
@@ -172,6 +178,7 @@ const CreateAplicant = () => {
                                     phone: stateForm.phone,
                                     rateExpected: stateForm.rateExpected,
                                     location: stateForm.location,
+                                    jobOfferId: jobOffer
                                 }
                             })}>
                         Create Applicant

@@ -13,19 +13,19 @@
 }
 .modal-container {
     background-color: $white;
-    border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    min-height: 100px;
-    padding: 20px;
+    border-radius: 0.313rem;
+    box-shadow: rgba(100, 100, 111, 0.2)0 7px 29px0;
+    min-height: 6.25rem;
+    padding: 1.25rem;
     position: relative;
     width: 80vw;
     #icon-play-x {
         color: $color_purple;
-        height: 20px;
+        height: 1.25rem;
         position: absolute;
-        right: 20px;
-        top: 20px;
-        width: 20px;
+        right: 1.25rem;
+        top: 1.25rem;
+        width: 1.25rem;
         &:hover {
             color: $color_purple;
         }
@@ -33,11 +33,11 @@
 }
 .modal-header {
     align-items: center;
-    border-bottom: 1px solid $color-purple-light;
+    border-bottom:0.063rem solid $color-purple-light;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.625rem;
     h3 {
         color: $color_purple;
         font-size: 1.3rem;
