@@ -2,18 +2,18 @@ import { gql } from '@apollo/client'
 
 
 export const CREATE_OFFER = gql`
-    mutation createOffer(
-        $nameOffer: String!  
-        $offerStartDate: String!
-        $offerEndDate: String!
-        $stateActive: Boolean!
-        $ratePerHour: String!
-        $tools: String!
-        $disciplines: String!
-        $jobDescription: String!
+    mutation insertOffer(
+        $nameOffer: String!,
+        $offerStartDate: String!,
+        $offerEndDate: String!,
+        $stateActive: String,
+        $ratePerHour: String!,
+        $tools: String!,
+        $disciplines: String!,
+        $jobDescription: String!,
         $jobType: String!
         ){
-        createOffer(
+        insertOffer(
             nameOffer: $nameOffer 
             offerStartDate: $offerStartDate 
             offerEndDate: $offerEndDate
@@ -24,7 +24,6 @@ export const CREATE_OFFER = gql`
             jobDescription: $jobDescription
             jobType: $jobType
         ){
-            idOffer
             nameOffer 
             offerStartDate
             offerEndDate

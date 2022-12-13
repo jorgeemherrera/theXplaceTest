@@ -35,33 +35,34 @@ export default function Search() {
                     <input type="text" value={search} onChange={handleChange} className="search-offer" />
                 </div> :
             {
-                data?.getAllOffer.map((offer: any, idx: number) => {
-                    return search === "" || data?.getAllOffer[idx].nameOffer.toLowerCase().includes(search.toLowerCase()) ?
+                data ? 
+                data?.getJobOffers.map((offer: any, idx: number) => {
+                    return search === "" || data?.getJobOffers[idx].value.nameOffer.toLowerCase().includes(search.toLowerCase()) ?
                         <>
-                            <div key={offer.idOffer} className="job-offer">
+                            <div key={offer.name} className="job-offer">
                                 <div className="job-offer__header">
-                                    <h1> {offer.nameOffer}</h1>
+                                    <h1> {offer.value.nameOffer}</h1>
                                     <span className='pill-offer-type'>
-                                        {offer.jobType === 'remote' ? <IconDeviceLaptop /> : offer.jobType === 'on site' ? <IconBuilding /> : <IconBuildingCommunity />}
-                                        {offer.jobType} </span>
-                                    <span className='date'><IconCalendarEvent /> <span>Open offer: </span>{offer.offerStartDate}</span>
-                                    <span className="date"><IconCalendarOff /> <span>Close offer:</span>  {offer.offerEndDate}</span>
-                                    <span className="pill-offer"><IconDiscountCheck />{offer.stateActive ? 'active' : null}</span>
+                                        {offer.value.jobType === 'remote' ? <IconDeviceLaptop /> : offer.value.jobType === 'on site' ? <IconBuilding /> : <IconBuildingCommunity />}
+                                        {offer.value.jobType} </span>
+                                    <span className='date'><IconCalendarEvent /> <span>Open offer: </span>{offer.value.offerStartDate}</span>
+                                    <span className="date"><IconCalendarOff /> <span>Close offer:</span>  {offer.value.offerEndDate}</span>
+                                    <span className="pill-offer"><IconDiscountCheck />{offer.value.stateActive ? 'active' : null}</span>
                                 </div>
                                 <div className='job-offer__description'>
-                                    <p className='skills'><span>Skills:</span> {offer.tools}</p>
-                                    <p className='disciplines'><span>Disciplines:</span> {offer.disciplines}</p>
-                                    <p className='rate-hour'><span>Rate per hour:</span> <IconCurrencyDollar />{offer.ratePerHour} USD</p>
+                                    <p className='skills'><span>Skills:</span> {offer.value.tools}</p>
+                                    <p className='disciplines'><span>Disciplines:</span> {offer.value.disciplines}</p>
+                                    <p className='rate-hour'><span>Rate per hour:</span> <IconCurrencyDollar />{offer.value.ratePerHour} USD</p>
                                     <Button onClick={onHandleClickModal}>Apply this job <IconHandClick /></Button>
                                 </div>
-                                <span>{offer.company}</span>
-                                <p> {offer.jobDescription}</p>
+                                <span>{offer.value.company}</span>
+                                <p> {offer.value.jobDescription}</p>
                             </div>
-                            <Modal title={`Aplicar a la oferta ${offer.nameOffer}`} stateModal={modalState} changeModalState={setModalState}>
+                            <Modal title={`Aplicar a la oferta ${offer.value.nameOffer}`} stateModal={modalState} changeModalState={setModalState}>
                                 <CreateAplicant/>
                             </Modal>
                         </> : null
-                })
+                }): <h1 className="message">Haven't created any Job Offer?</h1>
             }
         </>
     )

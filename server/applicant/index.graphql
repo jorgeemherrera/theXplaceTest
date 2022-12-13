@@ -1,0 +1,43 @@
+type Applicant {
+  email: String
+  jobType: String
+  lastName: String
+  location: String
+  name: String
+  phone: String
+  rateExpected: Int
+  skills: String
+}
+
+
+type Query {
+  getApplicantById(id: ID): Applicant
+    @rest(
+      endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/applicant/$id.json"
+    )
+ 
+  getApplicants: [Applicant]
+    @rest(
+      endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/applicant.json"
+    )
+}
+
+type Mutation{
+  insertApplicant(email: String!, jobType: String!, lastName: String! location: String!, name: String!, phone: String!, rateExpected: Int!, skills: String!): Applicant
+  @rest(
+    endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/applicant.json"
+    method: POST
+    postbody: """
+      {
+        "email": "{{.Get "email"}}",
+        "jobType": "{{.Get "jobType"}}"
+        "lastName": "{{.Get "lastName"}}"
+        "location": "{{.Get "location"}}"
+        "name": "{{.Get "name"}}"
+        "phone": "{{.Get "phone"}}"
+        "rateExpected": "{{.Get "rateExpected"}}"
+        "skills": "{{.Get "skills"}}"
+      }
+    """
+  )
+}

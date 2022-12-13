@@ -1,0 +1,10 @@
+schema
+  @sdl(
+    files: [
+      "applicant/index.graphql"
+      "company/index.graphql"
+      "jobOffer/index.graphql"
+    ]
+  ) {
+  query: Query
+}

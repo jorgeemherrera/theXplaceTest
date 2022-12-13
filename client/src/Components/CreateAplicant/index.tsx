@@ -8,7 +8,7 @@ import { IconX } from '@tabler/icons';
 
 const CreateAplicant = () => {
     const [stateForm, setStateForm] = useState({
-        nameApplicant: "",
+        name: "",
         lastname: "",
         email: "",
         jobType: "",
@@ -104,8 +104,8 @@ const CreateAplicant = () => {
                             <input
                                 placeholder="Name"
                                 type="text"
-                                name="nameApplicant"
-                                value={stateForm.nameApplicant}
+                                name="name"
+                                value={stateForm.name}
                                 onChange={handleChangeInput}
                             />
                             <input placeholder="Lastname"
@@ -163,7 +163,7 @@ const CreateAplicant = () => {
                         onClick={() =>
                             CreateAplicant({
                                 variables: {
-                                    nameApplicant: stateForm.nameApplicant,
+                                    name: stateForm.name,
                                     lastName: stateForm.lastname,
                                     skills: skillsInputStrings,
                                     email: stateForm.email,

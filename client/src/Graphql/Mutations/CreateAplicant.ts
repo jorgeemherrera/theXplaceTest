@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const CREATE_APPLICANT = gql`
 mutation createApplicant(
-    $nameApplicant: String!  
+    $name: String!  
     $lastName: String! 
     $email: String! 
     $skills: String! 
@@ -13,7 +13,7 @@ mutation createApplicant(
     $location: String! 
     ){
     createApplicant(
-        nameApplicant: $nameApplicant 
+        name: $name 
         lastName: $lastName 
         email: $email 
         skills: $skills 
@@ -24,7 +24,7 @@ mutation createApplicant(
         location: $location 
     ){
         idApplicant
-        nameApplicant
+        name
         lastName
         skills
         email

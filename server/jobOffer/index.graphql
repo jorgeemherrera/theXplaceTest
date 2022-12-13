@@ -1,0 +1,45 @@
+type JobOfferEntry {
+  disciplines: String
+  jobDescription: String
+  jobType: String
+  nameOffer: String
+  offerEndDate: String
+  offerStartDate: String
+  ratePerHour: String
+  stateActive: String
+  tools: String
+}
+
+type JobOfferList {
+  name: ID
+  value: JobOfferEntry
+}
+
+type Query {
+  getJobOffers: [JobOfferList]
+    @rest(
+      endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/job_offer.json"
+      transforms: [{pathpattern: [], editor: "objectToArray" }]
+    )
+}
+
+
+type Mutation {
+  insertOffer(disciplines: String!, jobDescription: String!, jobType: String!, nameOffer: String!, offerEndDate: String!, offerStartDate: String!, ratePerHour: String!, stateActive: String, tools: String!): JobOfferEntry
+    @rest(
+      endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/job_offer.json"
+      method: POST
+      postbody: """
+      {
+        "disciplines": "{{.Get "disciplines"}}",
+        "jobDescription": "{{.Get "jobDescription"}}",
+        "jobType": "{{.Get "jobType"}}",
+        "nameOffer": "{{.Get "nameOffer"}}",
+        "offerEndDate": "{{.Get "offerEndDate"}}",
+        "ratePerHour": "{{.Get "ratePerHour"}}",
+        "stateActive": "{{.Get "stateActive"}}",
+        "tools": "{{.Get "tools"}}"
+      }
+      """
+    )
+}

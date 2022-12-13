@@ -1,0 +1,31 @@
+type CompaniesEntry {
+  description: String
+  nameCompany: String
+}
+
+type CompaniesList {
+  name: ID
+  value: CompaniesEntry
+}
+
+type Query {
+  getCompanies: [CompaniesList]
+    @rest(
+      endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/company.json"
+      transforms: [{pathpattern: [], editor: "objectToArray" }]
+    )
+}
+
+type Mutation {
+  insertCompany(nameCompany: String!, description: String!): CompaniesEntry
+    @rest(
+      endpoint: "https://thexplace-55ddc-default-rtdb.firebaseio.com/company.json"
+      method: POST
+      postbody: """
+      {
+        "nameCompany": "{{.Get "nameCompany"}}",
+        "description": "{{.Get "description"}}"
+      }
+      """
+    )
+}

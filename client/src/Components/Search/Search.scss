@@ -2,8 +2,10 @@
 
 h1 {
     font-size: 2rem;
+    &.message {
+        color: $white;
+    }
 }
-
 
 .search-bar {
     align-items: center;

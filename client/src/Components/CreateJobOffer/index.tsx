@@ -83,6 +83,7 @@ export default function CreateJobOffer() {
             <option value="Hybrid">Hybrid</option>
             <option value="On site">On Site</option>
           </select>
+          {stateActive.toString()}
           <label>
             State Active
             <input
@@ -98,8 +99,8 @@ export default function CreateJobOffer() {
               nameOffer: stateForm.nameOffer,
               offerStartDate: stateForm.offerStartDate,
               offerEndDate: stateForm.offerEndDate,
-              stateActive: stateActive,
-              ratePerHour: stateForm.ratePerHour,
+              stateActive: stateActive.toString(),
+              ratePerHour: stateForm.ratePerHour.toString(),
               tools: stateForm.tools,
               disciplines: stateForm.disciplines,
               jobDescription: stateForm.jobDescription,
