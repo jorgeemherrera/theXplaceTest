@@ -1,37 +1,35 @@
-import React, { useState } from "react";
-import { CreateCompany } from "../CreateCompany";
-import CreateJobOffer from "../CreateJobOffer";
-import { ListOfCompanies } from "../ListOfCompany";
+import React, { useState } from 'react';
+import { CreateCompany } from '../CreateCompany';
+import CreateJobOffer from '../CreateJobOffer';
+import { ListOfCompanies } from '../ListOfCompany';
 import { IconArrowBackUp } from '@tabler/icons';
 import { Link } from 'react-router-dom'
 import './Recruiter.scss'
-import Button from "../../shared/Button";
-
+import Button from '../../shared/Button';
 
 const Recruiter = () => {
-    const [createCompany, setCreateCompany] = useState(false)
-    const [createJobOffer, setCreateJobOffer] = useState(false)
-    const [viewCompanies, setViewCompanies] = useState(false)
+    const [createCompany, setCreateCompany] = useState(false);
+    const [createJobOffer, setCreateJobOffer] = useState(false);
+    const [viewCompanies, setViewCompanies] = useState(false);
 
     const selectCreateCompany = () => {
-        setCreateCompany(!createCompany)
+        setCreateCompany(!createCompany);
     }
     const selectCreateOffer = () => {
-        setCreateJobOffer(!createJobOffer)
+        setCreateJobOffer(!createJobOffer);
     }
 
     const selectViewCompanies = () => {
-        setViewCompanies(!viewCompanies)
+        setViewCompanies(!viewCompanies);
     }
 
-
     return (
-        <div className="parent-home recruiter">
+        <div className='parent-home recruiter'>
             <div className={!createCompany && !createJobOffer && !viewCompanies ?
-                "parent-recruiter" :
+                'parent-recruiter' :
                 createCompany && !createJobOffer && !viewCompanies ?
-                    "parent-recruiter create-company" :
-                    "parent-recruiter"
+                    'parent-recruiter create-company' :
+                    'parent-recruiter'
             }>
                 {!createCompany && !createJobOffer && !viewCompanies ?
                     <>

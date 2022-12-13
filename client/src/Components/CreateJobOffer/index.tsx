@@ -6,14 +6,14 @@ import Button from '../../shared/Button';
 
 export default function CreateJobOffer() {
   const [stateForm, setStateForm] = useState({
-    nameOffer: "",
-    offerStartDate: "",
-    offerEndDate: "",
-    ratePerHour: "",
-    tools: "",
-    disciplines: "",
-    jobDescription: "",
-    jobType: ""
+    nameOffer: '',
+    offerStartDate: '',
+    offerEndDate: '',
+    ratePerHour: '',
+    tools: '',
+    disciplines: '',
+    jobDescription: '',
+    jobType: ''
   });
   const [isValid, setIsValid] = useState(false);
   const [stateActive, setStateActive] = useState(false);
@@ -34,7 +34,7 @@ export default function CreateJobOffer() {
 
   useEffect(()=>{
     for (const [key, value] of Object.entries(stateForm)) {
-      if(value !== ""){
+      if(value !== ''){
         setIsValid(false)
       }else{
         setIsValid(true)
@@ -64,65 +64,65 @@ export default function CreateJobOffer() {
           <input
             type='text'
             placeholder='Name Offer'
-            name="nameOffer"
+            name='nameOffer'
             value={stateForm.nameOffer}
             onChange={handleChangeInput} />
           {stateForm.nameOffer !== '' ? null : <p className='error-message'>Enter the name of the offer</p>}
           <input
             type='date'
             placeholder='Offer start date'
-            name="offerStartDate"
+            name='offerStartDate'
             value={stateForm.offerStartDate}
             onChange={handleChangeInput} />
           {stateForm.offerStartDate !== '' ? null : <p className='error-message'>Enter the start date</p>}
           <input
             type='date'
             placeholder='Offer end date'
-            name="offerEndDate"
+            name='offerEndDate'
             value={stateForm.offerEndDate}
             onChange={handleChangeInput} />
           {stateForm.offerStartDate !== '' ? null : <p className='error-message'>Enter the deadline</p>}
           <input
             type='text'
             placeholder='Rate per hour'
-            name="ratePerHour"
+            name='ratePerHour'
             value={stateForm.ratePerHour}
             onChange={handleChangeInput} />
           {stateForm.ratePerHour !== '' ? null : <p className='error-message'>Enter hourly pay</p>}
           <input
             type='text'
             placeholder='Tools'
-            name="tools"
+            name='tools'
             value={stateForm.tools}
             onChange={handleChangeInput} />
           {stateForm.tools !== '' ? null : <p className='error-message'>Enter the necessary tools</p>}
           <input
             type='text'
             placeholder='Disciplines'
-            name="disciplines"
+            name='disciplines'
             value={stateForm.disciplines}
             onChange={handleChangeInput} />
           {stateForm.disciplines !== '' ? null : <p className='error-message'>Enter the necessary tools</p>}
           <input
             type='textarea'
             placeholder='Job Description'
-            name="jobDescription"
+            name='jobDescription'
             value={stateForm.jobDescription}
             onChange={handleChangeInput} />
           {stateForm.jobDescription !== '' ? null : <p className='error-message'>Enter job description</p>}
-          <select name="jobType" onChange={handleChangeInput} value={stateForm.jobType}>
-            <option value="" disabled>Select a Type of Job</option>
-            <option value="Remote">Remote</option>
-            <option value="Hybrid">Hybrid</option>
-            <option value="On site">On Site</option>
+          <select name='jobType' onChange={handleChangeInput} value={stateForm.jobType}>
+            <option value='' disabled>Select a Type of Job</option>
+            <option value='Remote'>Remote</option>
+            <option value='Hybrid'>Hybrid</option>
+            <option value='On site'>On Site</option>
           </select>
           {stateForm.jobType !== '' ? null : <p className='error-message'>Enter job type</p>}
           <label>
             State Active
             <input
               className='checkbox-state'
-              type="checkbox"
-              name="stateActive"
+              type='checkbox'
+              name='stateActive'
               checked={stateActive}
               onChange={handleChangeCheckbox}
             />

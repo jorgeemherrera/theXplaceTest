@@ -3,7 +3,17 @@
 .form-create-aplicant {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  input, select {
+  @media (min-width: 360px) and (max-width: 869px) {
+    grid-template-columns: auto;
+  }
+  @media (min-width: 870px) and (max-width: 1280px) {
+    grid-template-columns: auto auto;
+  }
+  @media (min-width: 1281px) {
+    grid-template-columns: auto auto auto;
+  }
+  input,
+  select {
     background: $white;
     border-radius: 0.313rem;
     border: none;
@@ -66,13 +76,13 @@ button {
   padding: 0 1rem;
   width: fit-content;
   #icon-x {
-    color: $color_purple;
+    color: $color-purple;
     height: 0.938rem;
     padding-left: 0.5rem;
     position: relative;
     width: 0.938rem;
     &:hover {
-      color: $color_purple;
+      color: $color-purple;
     }
   }
 }

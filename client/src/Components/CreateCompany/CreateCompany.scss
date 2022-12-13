@@ -9,10 +9,10 @@
     margin: 2px 0;
   }
   input {
+    @include box-shadow;
     background: $white;
     border-radius: 0.313rem;
     border: none;
-    box-shadow: 0 0.063rem 0.75rem  0 #e2d6f4;
     font-family: "Nunito", sans-serif;
     font-weight: bold;
     height: 2.5rem;
@@ -20,10 +20,10 @@
     padding: 0 0.5rem;
   }
   textarea {
+    @include box-shadow;
     background: $white;
     border-radius: 0.313rem;
     border: none;
-    box-shadow: 0 0.063rem 0.75rem 0 #e2d6f4;
     font-family: "Nunito", sans-serif;
     font-weight: bold;
     height: 4.563rem;

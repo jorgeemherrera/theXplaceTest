@@ -20,14 +20,14 @@
     position: relative;
     width: 80vw;
     #icon-play-x {
-        color: $color_purple;
+        color: $color-purple;
         height: 1.25rem;
         position: absolute;
         right: 1.25rem;
         top: 1.25rem;
         width: 1.25rem;
         &:hover {
-            color: $color_purple;
+            color: $color-purple;
         }
     }
 }
@@ -39,7 +39,7 @@
     margin-bottom: 1.25rem;
     padding-bottom: 0.625rem;
     h3 {
-        color: $color_purple;
+        color: $color-purple;
         font-size: 1.3rem;
         font-weight: 500;
         margin: 0;

@@ -1,7 +1,13 @@
-$color_purple:#290c54;
+$color-purple: #290c54;
 $color-purple-dark: #1a0835;
 $color-purple-light: #b69fd8;
-$fuchsia:#f500ff;
-$color_green: #00ff40;
+$fuchsia: #f500ff;
+$color-green: #00ff40;
+$blue: #00f3fc;
+$yellow: #ffff00;
 $white: #ffff;
-$black: black;
+$black: black;
+
+@mixin box-shadow {
+    box-shadow: 0 0.063rem 0.75rem 0 #e2d6f4;
+}

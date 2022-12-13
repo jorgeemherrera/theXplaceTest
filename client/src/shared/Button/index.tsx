@@ -9,7 +9,6 @@ type Props = {
 };
 
 export default function Button({ children, disabled, onClick, className }: Props) {
-console.log('disabled btn',disabled)
   const myClass = `btn ${className} ${disabled && 'action'}`;
   return (
     <button

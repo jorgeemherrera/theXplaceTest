@@ -8,7 +8,7 @@
    - 2.1  Open a console in the **/server** folder and run: ```npm install  ```
    - 2.2  Open a new console in the **/client** folder and run:  ``` npm install  ```
 3. From the **server** console run: ``` stepzen start ``` this run the backend
-4. From the **client** console run: ``` npm start ``` this run the frontend
+4. From the **client** console run: ``` npm start  ``` this run the frontend
 
 ## With these previous steps you should run the backend and the frontend.
 

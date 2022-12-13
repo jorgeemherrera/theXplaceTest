@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_COMPANIES } from '../../Graphql/Queries/Queries';
 import './ListOfCompany.scss'
@@ -11,12 +11,12 @@ function ListOfCompanies() {
             {
                 data ?
                     data?.getCompanies.map((comp: any) => {
-                        if (comp.value.nameCompany === "" || comp.value.description === "") {
+                        if (comp.value.nameCompany === '' || comp.value.description === '') {
                             return null;
                         } else {
                             return (
-                                <div className="target-list-company" key={comp.name}>
-                                    <h1>{comp.value.nameCompany}</h1>
+                                <div className='target-list-company' key={comp.name}>
+                                    <h1 className='target-list-company--title'>{comp.value.nameCompany}</h1>
                                     <hr />
                                     <p>{comp.value.description}</p>
                                 </div>

@@ -50,6 +50,7 @@ type Mutation {
         "jobDescription": "{{.Get "jobDescription"}}",
         "jobType": "{{.Get "jobType"}}",
         "nameOffer": "{{.Get "nameOffer"}}",
+        "offerStartDate": "{{.Get "offerStartDate"}}",
         "offerEndDate": "{{.Get "offerEndDate"}}",
         "ratePerHour": "{{.Get "ratePerHour"}}",
         "stateActive": "{{.Get "stateActive"}}",
