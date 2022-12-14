@@ -1,9 +1,8 @@
 @import "../../assets/scss/variables";
 
 .parent-job-offer {
-  .error-message{
-    color: red;
-    margin: 2px 0;
+  .error-message {
+    @include error-message
   }
   label {
     align-items: center;

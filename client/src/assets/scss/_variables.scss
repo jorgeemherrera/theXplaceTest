@@ -11,3 +11,9 @@ $black: black;
 @mixin box-shadow {
     box-shadow: 0 0.063rem 0.75rem 0 #e2d6f4;
 }
+
+@mixin error-message {
+    color: red;
+    margin: 2px 0;
+    font-size: 0.9rem;
+}

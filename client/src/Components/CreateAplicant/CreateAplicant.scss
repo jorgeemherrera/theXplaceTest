@@ -38,6 +38,11 @@ button {
   display: flex;
   flex-direction: column;
 }
+input {
+  &.error-message {
+    border: 1px solid red !important;
+  }
+}
 
 .container-pill {
   display: flex;
@@ -85,4 +90,10 @@ button {
       color: $color-purple;
     }
   }
+}
+
+.modal-message{
+  color: $color-purple;
+  text-align: center;
+  font-size: 1.3rem;
 }

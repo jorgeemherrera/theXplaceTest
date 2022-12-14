@@ -3,21 +3,27 @@ import PropTypes from 'prop-types';
 import './Modal.scss';
 import { IconPlaystationX } from '@tabler/icons';
 type Props = {
-    title: string,
+    title?: string,
     children: JSX.Element,
     stateModal: boolean,
-    changeModalState: any
+    changeModalState: any,
+    size?: string
 };
 
-const Modal = ({ children, title, stateModal, changeModalState }: Props) => {
+const Modal = ({ children, title, stateModal, changeModalState, size }: Props) => {
     return (
         <>
             {
                 stateModal ?
                     <section className='overlay'>
-                        <div className='modal-container'>
+                        <div className={size === 'sm' ? 'modal-container sm' : 'modal-container'}>
                             <div className='modal-header'>
-                                <h3>Apply to the offer: <strong>{title}</strong></h3>
+                                {
+                                    !title ?
+                                        <h3>Succcess!</h3>
+                                        : <h3>Apply to the offer <strong>{title}</strong></h3>
+                                }
+
                             </div>
                             <IconPlaystationX id='icon-play-x' onClick={() => changeModalState(false)} />
                             {children}
@@ -34,7 +40,9 @@ export default Modal;
 
 Modal.propTypes = {
     children: PropTypes.any.isRequired,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     stateModal: PropTypes.bool.isRequired,
-    changeModalState: PropTypes.func
+    changeModalState: PropTypes.func,
+    closeModal: PropTypes.bool,
+    size: PropTypes.any
 }

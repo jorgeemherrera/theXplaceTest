@@ -9,13 +9,13 @@ import {
     IconBuilding,
     IconPlaystationX,
     IconBuildingCommunity,
-    IconCalendarEvent
+    IconCalendarEvent,
+    IconCalendarOff,
+    IconCurrencyDollar,
+    IconDeviceLaptop,
+    IconDiscountCheck,
+    IconHandClick
 } from '@tabler/icons';
-import { IconCalendarOff } from '@tabler/icons';
-import { IconCurrencyDollar } from '@tabler/icons';
-import { IconDeviceLaptop } from '@tabler/icons';
-import { IconDiscountCheck } from '@tabler/icons';
-import { IconHandClick } from '@tabler/icons';
 
 import Button from '../../shared/Button';
 
@@ -23,8 +23,8 @@ export default function Search() {
     const [search, setSearch]: [string, (search: string) => void] = useState('');
     const { data } = useQuery(GET_ALL_OFFERS);
     const [modalState, setModalState] = useState(false);
-    const [offerId, setOfferId] = useState('');
     const [nameOffer, setNameOffer] = useState('');
+    const [offerId, setOfferId] = useState('');
 
     const handleChange = (e: { target: { value: string }; }) => {
         setSearch(e.target.value);
@@ -81,12 +81,12 @@ export default function Search() {
                                         <p className='skills'><span>Skills:</span> {offer.value.tools}</p>
                                         <p className='disciplines'><span>Disciplines:</span> {offer.value.disciplines}</p>
                                         <p className='rate-hour'><span>Rate per hour:</span> <IconCurrencyDollar />{offer.value.ratePerHour} USD</p>
-                                        <Button disabled={offer.value.stateActive === 'false'}onClick={() => onHandleClickModal(offer.name, offer.value.nameOffer)} key={offer.name}>Apply this job <IconHandClick /></Button>
+                                        <Button disabled={offer.value.stateActive === 'false'} onClick={() => onHandleClickModal(offer.name, offer.value.nameOffer)} key={offer.name}>Apply this job <IconHandClick /></Button>
                                     </div>
                                     <span>{offer.value.company}</span>
                                     <p> {offer.value.jobDescription}</p>
                                     <Modal title={nameOffer} stateModal={modalState} changeModalState={setModalState}>
-                                        <CreateAplicant jobOffer={offerId} changeModalState={true}/>
+                                        <CreateAplicant jobOffer={offerId}/>
                                     </Modal>
                                 </div>
                             </div> : null
